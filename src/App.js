@@ -1,7 +1,8 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './Header'
 import Input from './ToDoInput'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import List from './List'
 
 class App extends React.Component {
   // constructor(props) {
@@ -14,6 +15,7 @@ class App extends React.Component {
       <div className="App">
         <Header />
         <Input />
+        <List />
       </div>
     )
   }

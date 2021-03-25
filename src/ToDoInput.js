@@ -11,11 +11,11 @@ class Input extends React.Component {
     render() {
         return (
 
-                <div class="input-group mt-4 mb-3 input-group-lg">
+                <div className="input-group mt-4 mb-3 input-group-lg">
                     {
                         this.state.show ? 
                         <button 
-                        class="btn btn-outline-secondary" 
+                        className="btn btn-outline-secondary" 
                         type="button" 
                         id="button-addon1" 
                         display="none"
@@ -27,7 +27,7 @@ class Input extends React.Component {
                     }
                     <input 
                     type="text" 
-                    class="form-control" 
+                    className="form-control" 
                     placeholder="What needs to be done?" 
                     onChange={() => {this.setState({show: true})}}
                     />
