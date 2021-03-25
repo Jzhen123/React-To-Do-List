@@ -11,7 +11,7 @@ class Input extends React.Component {
     render() {
         return (
 
-                <div className="input-group mt-4 mb-3 input-group-lg">
+                <div className="input-group mt-4 mb-1 input-group-lg">
                     {
                         this.state.show ? 
                         <button 

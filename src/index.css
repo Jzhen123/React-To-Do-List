@@ -22,6 +22,11 @@ code {
   margin: auto;
   width: 50%;
   padding: 10px;
+  /* text-align: center; */
+  /* transform: translateY(100%); */
+}
+.Header {
   text-align: center;
-  transform: translateY(100%);
+  font-size: xxx-large;
+  margin-top: 150px;
 }

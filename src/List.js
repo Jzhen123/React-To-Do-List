@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 // class ListItem extends React.Component {
 //     constructor(props) {
 //         super(props);
@@ -19,9 +20,9 @@ class List extends React.Component {
     constructor(props) {
         super(props);
         this.tasks = [
-            { text: 'Number One'},
-            { text: 'Number Two'},
-            { text: 'Number Three'},
+            { text: 'Number' },
+            { text: 'Number' },
+            { text: 'Number' },
         ];
     }
 
@@ -29,21 +30,30 @@ class List extends React.Component {
     render() {
 
         return (
-            // <div>
-            // {console.log(this.tasks[0])}
-            // </div>
-            <ul className="list-group">
+            <div className="list-group">
                 {
                     this.tasks.map((item, index) => {
                         return (
-                            <li className="list-group-item">
-                                {item.text}
-                            </li>
+
+                            <label className="list-group-item position-relative text-start">
+                                <input className="form-check-input me-2" type="radio" value="" />
+                                {item.text} {index}
+                                <button type="button" className="btn position-absolute top-0 end-0 me-1">X</button>
+
+                            </label>
                         )
                     })
 
                 }
-            </ul>
+                <label className="list-group-item position-relative text-start list-group-item-primary border border-primary rounded-bottom">
+                    {this.tasks.length} items left
+                    <button type="button" className="btn btn-sm ms-4">All</button>
+                    <button type="button" className="btn btn-sm">Active</button>
+                    <button type="button" className="btn btn-sm">Completed</button>
+                    <button type="button" className="btn btn-sm position-absolute top-0 end-0 mt-2">Clear Completed</button>
+
+                </label>
+            </div>
         )
 
     }
