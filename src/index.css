@@ -28,5 +28,6 @@ code {
 .Header {
   text-align: center;
   font-size: xxx-large;
+  font-weight: bold;
   margin-top: 150px;
 }

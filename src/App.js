@@ -5,17 +5,21 @@ import Input from './ToDoInput'
 import List from './List'
 
 class App extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  // };
+  constructor(props) {
+    super(props);
+  };
 
   render() {
 
     return (
       <div className="App">
         <Header />
-        <Input />
-        <List />
+        <Input 
+          tasks={this.tasks}
+        />
+        {/* <List 
+          tasks={this.tasks}
+        /> */}
       </div>
     )
   }
