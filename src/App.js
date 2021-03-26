@@ -9,9 +9,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header />
-        <ToDoList
-        tasks={this.tasks}
-        />
+        <ToDoList />
       </div>
     )
   }

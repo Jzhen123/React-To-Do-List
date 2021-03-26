@@ -19,9 +19,11 @@ class ToDoList extends React.Component {
     render() {
         return (
             <>
-                <Input tasks={this.tasks} 
+                <Input 
+                tasks={this.tasks} 
                 handler = {this.handler}
                 />
+                
                 <ul className="list-group">
                     <Task tasks={this.tasks} />
                 </ul>

@@ -21,7 +21,7 @@ class Task extends React.Component {
                         )
                     })
                 }
-
+                {(this.tasks.length > 0 ? 
                 <li className="list-group-item position-relative text-start list-group-item-primary border border-primary rounded-bottom">
                     {this.tasks.length} items left
                     <button type="button" className="btn btn-sm ms-4">All</button>
@@ -29,6 +29,8 @@ class Task extends React.Component {
                     <button type="button" className="btn btn-sm">Completed</button>
                     <button type="button" className="btn btn-sm position-absolute top-0 end-0 mt-2">Clear Completed</button>
                 </li>
+                : null
+                )}
             </>
         )
     }
