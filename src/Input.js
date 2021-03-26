@@ -28,13 +28,13 @@ class Input extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit} className="mt-4">
+            <form onSubmit={this.handleSubmit} className="mt-4 ps-4 pe-4">
                 <div className="input-group">
-                    <button className="btn btn-outline-primary" onClick={this.handleSubmits} type="submit">X</button>
+                    <button className="btn btn-outline-primary " onClick={this.handleSubmits} type="submit">X</button>
                     <input
                         type="text"
                         value={this.state.value}
-                        className="form-control"
+                        className="form-control "
                         placeholder="What needs to be done?"
                         onChange={this.handleChange}
                     />

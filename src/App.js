@@ -7,7 +7,7 @@ class App extends React.Component {
   render() {
 
     return (
-      <div className="App">
+      <div className="App card mx-auto mt-5 p-1">
         <Header />
         <ToDoList />
       </div>
