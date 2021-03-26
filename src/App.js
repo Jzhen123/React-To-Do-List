@@ -4,16 +4,24 @@ import Header from './Header'
 import ToDoList from './ToDoList'
 
 class App extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  // };
+  constructor(props) {
+    super(props);
+    this.tasks = [
+      { text: 'Jimmy' },
+      { text: 'Joe' },
+      { text: 'Jacob' },
+      { text: 'Joy' },
+  ];
+  };
 
   render() {
 
     return (
       <div className="App">
         <Header />
-        <ToDoList />
+        <ToDoList
+        tasks={this.tasks}
+        />
       </div>
     )
   }

@@ -1,39 +1,40 @@
 import React from 'react';
-
+import Task from './Task';
+import Input from './Input';
 class ToDoList extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            show: false,
-            value: ''
-        };
-        this.tasks = [];
+        this.tasks = props.tasks
 
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handler = this.handler.bind(this)
+        // this.handleChange = this.handleChange.bind(this);
+        // this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleSubmit(event) {
-        if (this.state.value !== '') {
-            this.tasks.push({ text: this.state.value })
-        }
-        this.setState({ value: '' })
-        event.preventDefault();
+    handler(tasks) {
+        this.setState({
+            tasks: tasks
+        })
     }
+    // handleSubmit(event) {
+    //     if (this.state.value !== '') {
+    //         this.tasks.push({ text: this.state.value })
+    //     }
+    //     this.setState({ value: '' })
+    //     event.preventDefault();
+    // }
 
-    handleChange(event) {
-        this.setState({ value: event.target.value })
-    }
+    // handleChange(event) {
+    //     this.setState({ value: event.target.value })
+    // }
 
     render() {
         return (
             <>
-                <div className="input-group mt-4 input-group-lg">
-                    <button className="btn btn-outline-primary" onClick={this.handleSubmits} type="button">
-                        X
-                        </button>
-                    <form onSubmit={this.handleSubmit}>
+                {/* <form onSubmit={this.handleSubmit}>
+                    <div className="input-group">
+                        <button className="btn btn-outline-primary" onClick={this.handleSubmits} type="submit">X</button>
                         <input
                             type="text"
                             value={this.state.value}
@@ -41,32 +42,22 @@ class ToDoList extends React.Component {
                             placeholder="What needs to be done?"
                             onChange={this.handleChange}
                         />
-                    </form>
-                </div>
+                    </div>
+                </form> */}
+                <Input tasks={this.tasks} 
+                handler = {this.handler}
+                />
+                <ul className="list-group">
+                    <Task tasks={this.tasks} />
 
-                <div className="list-group">
-                    {
-                        this.tasks.map((item, index) => {
-                            return (
-
-                                <label className="list-group-item position-relative text-start">
-                                    <input className="form-check-input me-2" type="checkbox" key={index} />
-                                    {item.text}
-                                    <button type="button" className="btn position-absolute top-0 end-0 me-1">X</button>
-
-                                </label>
-                            )
-                        })
-                    }
-                    <label className="list-group-item position-relative text-start list-group-item-primary border border-primary rounded-bottom">
+                    <li className="list-group-item position-relative text-start list-group-item-primary border border-primary rounded-bottom">
                         {this.tasks.length} items left
                     <button type="button" className="btn btn-sm ms-4">All</button>
                         <button type="button" className="btn btn-sm">Active</button>
                         <button type="button" className="btn btn-sm">Completed</button>
                         <button type="button" className="btn btn-sm position-absolute top-0 end-0 mt-2">Clear Completed</button>
-
-                    </label>
-                </div>
+                    </li>
+                </ul>
             </>
         )
     }
