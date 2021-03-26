@@ -24,7 +24,7 @@ class ToDoList extends React.Component {
                 handler = {this.handler}
                 />
                 
-                <ul className="list-group ps-4 pe-4 border-top-0">
+                <ul className="list-group ps-4 pe-4 border-top-0 mb-4">
                     <Task tasks={this.tasks} />
                 </ul>
             </>

@@ -9,7 +9,7 @@ class Task extends React.Component {
     render() {
         return (
             <>
-                {
+                {   /* Creates all the tasks based off of props.tasks */
                     this.tasks.map((item, index) => {
                         return (
                             <li className="list-group-item" key={index}>
@@ -21,7 +21,8 @@ class Task extends React.Component {
                         )
                     })
                 }
-                {(this.tasks.length > 0 ? 
+                {/* Creates the task feature bar at the bottom, but only when there is atleast 1 task */}
+                {(this.tasks.length >= 1 ? 
                 <li className="list-group-item position-relative text-start list-group-item-primary border border-primary rounded-bottom">
                     {this.tasks.length} items left
                     <button type="button" className="btn btn-sm ms-4">All</button>
