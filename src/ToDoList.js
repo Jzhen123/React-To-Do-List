@@ -7,16 +7,21 @@ class ToDoList extends React.Component {
         super(props);
         this.tasks = [];
 
-        this.handler = this.handler.bind(this)
+        this.input = this.input.bind(this)
     }
 
     // Function for the Input component to be able to "send" props back up to its parent
     // Not too comfortable on how this is possbile still
-    handler(tasks) {
+    input(tasks) {
         this.setState({
             tasks: tasks
         })
+        console.log(this.tasks)
     }
+
+    // selected(tasks) {
+
+    // }
 
     render() {
         return (
@@ -24,11 +29,14 @@ class ToDoList extends React.Component {
             <>
                 <Input 
                 tasks={this.tasks} 
-                handler = {this.handler}
+                input={this.input}
                 />
                 
                 <ul className="list-group ps-4 pe-4 border-top-0 mb-4">
-                    <Task tasks={this.tasks} />
+                    <Task 
+                    tasks={this.tasks} 
+                    input={this.input}
+                    />
                 </ul>
             </>
         )

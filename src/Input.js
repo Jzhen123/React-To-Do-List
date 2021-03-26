@@ -15,9 +15,12 @@ class Input extends React.Component {
     // Function that pushes data into this.tasks when the user submits anything to the Input
     handleSubmit(event) {
         if (this.state.value !== '') {
-            this.tasks.push({ text: this.state.value })
+            this.tasks.push({ text: this.state.value,
+                              id: this.tasks.length + 1,
+                            //   selected: false
+                            })
         }
-        this.props.handler(this.tasks)
+        this.props.input(this.tasks)
         this.setState({ value: '' })
         event.preventDefault();
     }
@@ -33,7 +36,7 @@ class Input extends React.Component {
             <form onSubmit={this.handleSubmit} className="mt-4 ps-4 pe-4">
                 <div className="input-group"> 
                 {(this.state.value !== '' ?
-                    <button className="btn btn-outline-primary " onClick={this.handleSubmits} type="submit">X</button> : null)}
+                    <button className="btn btn-outline-primary" type="submit">X</button> : null)}
                     <input
                         type="text"
                         value={this.state.value}
