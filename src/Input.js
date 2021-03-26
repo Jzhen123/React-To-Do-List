@@ -7,7 +7,7 @@ class Input extends React.Component {
         this.state = {
             value: ''
         };
-        
+
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -29,17 +29,19 @@ class Input extends React.Component {
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
-                    <div className="input-group">
-                        <button className="btn btn-outline-primary" onClick={this.handleSubmits} type="submit">X</button>
-                        <input
-                            type="text"
-                            value={this.state.value}
-                            className="form-control"
-                            placeholder="What needs to be done?"
-                            onChange={this.handleChange}
-                        />
-                    </div>
-                </form>
+                <div className="input-group">
+                    <button className="btn btn-outline-primary" onClick={this.handleSubmits} type="submit">X</button>
+                    <input
+                        type="text"
+                        value={this.state.value}
+                        className="form-control"
+                        placeholder="What needs to be done?"
+                        onChange={this.handleChange}
+                    />
+                </div>
+            </form>
+
+                
         )
     }
 }
