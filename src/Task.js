@@ -27,7 +27,7 @@ class Task extends React.Component {
                 {   /* Creates all the tasks based off of props.tasks */
                     this.tasks.map((item) => {
                         return (
-                            <li className="list-group-item" key={item.id}>
+                            <li className="list-group-item" key={new Date}>
                                 <input className="form-check-input me-2" type="checkbox" onClick={this.selected} />
                                 {item.text}
                                 <button type="button" className="btn position-absolute top-0 end-0 me-1">X</button>
